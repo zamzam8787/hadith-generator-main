@@ -1,21 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HadithComponent from './components/HadithComponent.jsx'
-
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import WelcomePage from './pages/WelcomePage';
+import HadithComponent from './components/HadithComponent';
 
 function App() {
-  //const [count, setCount] = useState(0)
-
   return (
-    <>
-    <div className="App">
-   
-      <HadithComponent />
-    </div>
-    </>
-  )
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/hadith" element={<HadithComponent />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
